@@ -77,6 +77,9 @@ export default {
      */
     extend(config, ctx) {}
   },
+  workbox: {
+    dev: true
+  },
   styleResources: {
     sass: ['~/assets/styles/_variables.sass']
   },
@@ -93,12 +96,6 @@ export default {
     lang: 'ja',
     theme_color: '#5BBBB7',
     display: 'standalone',
-    icons: [
-      {
-        src: '/logo-dena-white.png',
-        sizes: '60x25',
-        type: 'image/png'
-      }
-    ]
+    icons: []
   }
 }
