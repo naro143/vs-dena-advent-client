@@ -39,10 +39,12 @@ export default {
   },
   methods: {
     async getQiita(index) {
-      await this.$axios.get('/api/articles').then((response) => {
-        this.shinsotsu = response.data.shinsotsu[index]
-        this.general = response.data.general[index]
-      })
+      await this.$axios
+        .get('https://vs-dena-advent.appspot.com/articles')
+        .then((response) => {
+          this.shinsotsu = response.data.shinsotsu[index]
+          this.general = response.data.general[index]
+        })
     }
   }
 }

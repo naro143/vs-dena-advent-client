@@ -64,10 +64,12 @@ export default {
   },
   methods: {
     async getQiita() {
-      await this.$axios.get('/api/likes').then((response) => {
-        this.shinsotsu = response.data.shinsotsu
-        this.general = response.data.general
-      })
+      await this.$axios
+        .get('https://vs-dena-advent.appspot.com/likes')
+        .then((response) => {
+          this.shinsotsu = response.data.shinsotsu
+          this.general = response.data.general
+        })
     }
   }
 }
