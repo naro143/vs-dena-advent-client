@@ -22,7 +22,7 @@ export default {
     dataCollection() {
       return {
         display: false,
-        labels: ['20新卒', '社員オールスター'],
+        labels: ['20卒内定者', '社員オールスター'],
         datasets: [
           {
             label: '総合いいね数',
@@ -45,7 +45,16 @@ export default {
               ticks: {
                 min: 0,
                 max: 100,
-                stepSize: 10
+                stepSize: 10,
+                fontSize: 16
+              }
+            }
+          ],
+          xAxes: [
+            {
+              display: true,
+              ticks: {
+                fontSize: 16
               }
             }
           ]

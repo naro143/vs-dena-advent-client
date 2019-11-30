@@ -4,7 +4,7 @@
     <div class="row row--shinsotsu">
       <h3>20卒内定者</h3>
     </div>
-    <QiitaCard v-if="!!shinsotsu.url" :data="shinsotsu" />
+    <QiitaCard v-if="!!shinsotsu && !!shinsotsu.url" :data="shinsotsu" />
     <div v-else class="empty">
       <p>該当の記事がないか未公開です。</p>
       <p class="small">※記事は毎朝7:00頃に公開されます。</p>
@@ -12,7 +12,7 @@
     <div class="row row--general">
       <h3>社員オールスター</h3>
     </div>
-    <QiitaCard v-if="!!general.url" :data="general" />
+    <QiitaCard v-if="!!general && !!general.url" :data="general" />
     <div v-else class="empty">
       <p>該当の記事がないか未公開です。</p>
       <p class="small">※記事は毎朝7:00頃に公開されます。</p>
@@ -74,10 +74,11 @@ export default {
     flex-direction: column
     align-items: center
     justify-content: center
+    padding: 10px
     height: 120px
     border: 1px solid $color-primary
     border-radius: 4px
-    font-size: 24px
+    font-size: 22px
     .small
       font-size: 16px
 </style>

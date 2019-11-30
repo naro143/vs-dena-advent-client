@@ -30,4 +30,9 @@ export default {
 }
 </script>
 
-<style scoped lang="sass"></style>
+<style scoped lang="sass">
+.container
+  @media screen and (min-width: $media-pc)
+    max-width: 700px
+    margin: 0 auto
+</style>
