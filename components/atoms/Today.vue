@@ -78,7 +78,7 @@ export default {
     height: 120px
     border: 1px solid $color-primary
     border-radius: 4px
-    font-size: 22px
+    font-size: 20px
     .small
       font-size: 16px
 </style>

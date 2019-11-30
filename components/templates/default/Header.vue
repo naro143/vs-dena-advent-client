@@ -1,6 +1,5 @@
 <template>
   <header class="Header">
-    <img class="Header__logo" src="/logo-dena-white.png" alt="" />
     <h1 class="Header__title">
       vs DeNA Advent Calendar
     </h1>
@@ -26,9 +25,8 @@ $header_height: 56px
   background-color: $color-primary
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5)
   z-index: 100
-  &__logo
-    margin: 0 10px
   &__title
+    margin: 0 10px
     font-size: 18px
     line-height: 23px
     white-space: nowrap
