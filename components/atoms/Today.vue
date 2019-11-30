@@ -4,21 +4,24 @@
     <div class="row row--shinsotsu">
       <h3>20卒内定者</h3>
     </div>
-    <QiitaCard v-if="!!shinsotsu" :url="shinsotsu" />
+    <QiitaCard v-if="!!shinsotsu.url" :data="shinsotsu" />
     <div v-else class="empty">
-      該当記事なし
+      <p>該当の記事がないか未公開です。</p>
+      <p class="small">※記事は毎朝7:00頃に公開されます。</p>
     </div>
     <div class="row row--general">
       <h3>社員オールスター</h3>
     </div>
-    <QiitaCard v-if="!!general" :url="general" />
+    <QiitaCard v-if="!!general.url" :data="general" />
     <div v-else class="empty">
-      該当記事なし
+      <p>該当の記事がないか未公開です。</p>
+      <p class="small">※記事は毎朝7:00頃に公開されます。</p>
     </div>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
 import QiitaCard from '@/components/atoms/QiitaCard'
 
 export default {
@@ -31,13 +34,14 @@ export default {
     }
   },
   mounted() {
-    this.getQiita()
+    const day = moment(new Date()).format('D')
+    this.getQiita(day - 1)
   },
   methods: {
-    async getQiita() {
-      await this.$axios.get('/api/likes').then((response) => {
-        this.shinsotsu = response.data.shinsotsu
-        this.general = response.data.general
+    async getQiita(index) {
+      await this.$axios.get('/api/articles').then((response) => {
+        this.shinsotsu = response.data.shinsotsu[index]
+        this.general = response.data.general[index]
       })
     }
   }
@@ -65,10 +69,13 @@ export default {
     border-bottom: 4px solid $color-primary
   .empty
     display: flex
+    flex-direction: column
     align-items: center
     justify-content: center
     height: 120px
     border: 1px solid $color-primary
     border-radius: 4px
     font-size: 24px
+    .small
+      font-size: 16px
 </style>

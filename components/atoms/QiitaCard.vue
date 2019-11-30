@@ -1,45 +1,23 @@
 <template>
-  <a :href="url" class="QiitaCard">
+  <a :href="data.url" class="QiitaCard">
     <div class="image">
       <img
         src="https://cdn.qiita.com/assets/qiita-fb-2887e7b4aad86fd8c25cea84846f2236.png"
       />
     </div>
     <div class="content">
-      <p class="title">{{ title }}</p>
+      <p class="title">{{ data.title }}</p>
     </div>
   </a>
 </template>
 
 <script>
-import parser from 'ogp-parser'
-
 export default {
   name: 'QiitaCard',
   props: {
-    url: {
-      type: String,
-      default: ''
-    }
-  },
-  data: () => {
-    return {
-      title: ''
-    }
-  },
-  mounted() {
-    this.getQiita()
-  },
-  methods: {
-    async getQiita() {
-      await parser(this.url, false)
-        .then((data) => {
-          console.log(data)
-          this.title = data.title
-        })
-        .catch((error) => {
-          console.error(error)
-        })
+    data: {
+      type: Object,
+      default: null
     }
   }
 }
