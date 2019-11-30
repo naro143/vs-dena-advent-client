@@ -1,5 +1,6 @@
 <template>
   <div class="Twitter">
+    <h2>Twitter</h2>
     <a
       class="twitter-moment"
       href="https://twitter.com/i/moments/1200785191846862848?ref_src=twsrc%5Etfw"
@@ -23,4 +24,6 @@ export default {
 <style scoped lang="sass">
 .Twitter
   padding: 0 10px
+  h2
+    border-bottom: 4px solid $color-primary
 </style>

@@ -17,6 +17,15 @@
       <p>該当の記事がないか未公開です。</p>
       <p class="small">※記事は毎朝7:00頃に公開されます。</p>
     </div>
+    <h2>カレンダー</h2>
+    <div class="row row--shinsotsu">
+      <h3>20卒内定者</h3>
+    </div>
+    <QiitaCard :data="shinsotsuCalendar" />
+    <div class="row row--general">
+      <h3>社員オールスター</h3>
+    </div>
+    <QiitaCard :data="generalCalendar" />
   </div>
 </template>
 
@@ -30,7 +39,15 @@ export default {
   data: () => {
     return {
       shinsotsu: null,
-      general: null
+      general: null,
+      shinsotsuCalendar: {
+        title: 'DeNA 20 新卒 Advent Calendar 2019',
+        url: 'https://qiita.com/advent-calendar/2019/dena-20-shinsostu'
+      },
+      generalCalendar: {
+        title: 'DeNA Advent Calendar 2019',
+        url: 'https://qiita.com/advent-calendar/2019/dena'
+      }
     }
   },
   mounted() {
@@ -74,7 +91,7 @@ export default {
     flex-direction: column
     align-items: center
     justify-content: center
-    padding: 10px
+    padding: 0 10px
     height: 120px
     border: 1px solid $color-primary
     border-radius: 4px
