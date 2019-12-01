@@ -13,7 +13,11 @@ export default {
         name: 'description',
         content: process.env.npm_package_description || ''
       },
-      { hid: 'og:image', property: 'og:image', content: '/icon.png' }
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://vs-dena-advent-client.naro143.com/icon.png'
+      }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     htmlAttrs: {
