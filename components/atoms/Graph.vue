@@ -44,7 +44,7 @@ export default {
               display: true,
               ticks: {
                 min: 0,
-                max: 100,
+                max: 200,
                 stepSize: 10,
                 fontSize: 16
               }
