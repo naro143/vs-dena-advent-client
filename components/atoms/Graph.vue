@@ -33,6 +33,9 @@ export default {
       }
     },
     options() {
+      const maxLikes = Math.max(this.shinsotsu, this.general)
+      // maxGraphValue = 100(min), 200, ...
+      const maxGraphValue = maxLikes + 100 - (maxLikes % 100)
       return {
         responsive: true,
         legend: {
@@ -44,8 +47,8 @@ export default {
               display: true,
               ticks: {
                 min: 0,
-                max: 300,
-                stepSize: 10,
+                max: maxGraphValue,
+                stepSize: maxGraphValue / 10,
                 fontSize: 16
               }
             }
