@@ -1,8 +1,16 @@
 <template>
   <div class="Today">
     <h2>今日の記事</h2>
+    <div class="row row--naitei">
+      <h3>21卒内定者</h3>
+    </div>
+    <QiitaCard v-if="!!naitei && !!naitei.url" :data="naitei" />
+    <div v-else class="empty">
+      <p>該当の記事がないか未公開です。</p>
+      <p class="small">※記事は毎朝7:00頃に公開されます。</p>
+    </div>
     <div class="row row--shinsotsu">
-      <h3>20卒内定者</h3>
+      <h3>20新卒</h3>
     </div>
     <QiitaCard v-if="!!shinsotsu && !!shinsotsu.url" :data="shinsotsu" />
     <div v-else class="empty">
@@ -18,8 +26,12 @@
       <p class="small">※記事は毎朝7:00頃に公開されます。</p>
     </div>
     <h2>カレンダー</h2>
+    <div class="row row--naitei">
+      <h3>21卒内定者</h3>
+    </div>
+    <QiitaCard :data="naiteiCalendar" />
     <div class="row row--shinsotsu">
-      <h3>20卒内定者</h3>
+      <h3>20新卒</h3>
     </div>
     <QiitaCard :data="shinsotsuCalendar" />
     <div class="row row--general">
@@ -38,15 +50,20 @@ export default {
   components: { QiitaCard },
   data: () => {
     return {
+      naitei: null,
       shinsotsu: null,
       general: null,
+      naiteiCalendar: {
+        title: 'DeNA 21 新卒 Advent Calendar 2020',
+        url: 'https://qiita.com/advent-calendar/2020/dena-21-shinsotsu',
+      },
       shinsotsuCalendar: {
-        title: 'DeNA 20 新卒 Advent Calendar 2019',
-        url: 'https://qiita.com/advent-calendar/2019/dena-20-shinsostu',
+        title: 'DeNA 20 新卒 Advent Calendar 2020',
+        url: 'https://qiita.com/advent-calendar/2020/dena-20-shinsotsu',
       },
       generalCalendar: {
-        title: 'DeNA Advent Calendar 2019',
-        url: 'https://qiita.com/advent-calendar/2019/dena',
+        title: 'DeNA Advent Calendar 2020',
+        url: 'https://qiita.com/advent-calendar/2020/dena',
       },
     }
   },
@@ -59,6 +76,7 @@ export default {
       await this.$axios
         .get('https://vs-dena-advent.appspot.com/articles')
         .then((response) => {
+          this.naitei = response.data.naitei[index]
           this.shinsotsu = response.data.shinsotsu[index]
           this.general = response.data.general[index]
         })
@@ -80,6 +98,8 @@ export default {
       margin: 0
     a
       margin: 0 0 0 5px
+    &--naitei
+      border-color: $color-naitei
     &--shinsotsu
       border-color: $color-shinsotsu
     &--general

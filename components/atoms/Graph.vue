@@ -22,18 +22,18 @@ export default {
     dataCollection() {
       return {
         display: false,
-        labels: ['20卒内定者', '社員オールスター'],
+        labels: ['21卒内定者', '20新卒', '社員オールスター'],
         datasets: [
           {
             label: '総合いいね数',
-            data: [this.shinsotsu, this.general],
-            backgroundColor: ['#DC0451', '#FDC82F'],
+            data: [this.naitei, this.shinsotsu, this.general],
+            backgroundColor: ['#DC0451', 'FF7900', '#FDC82F'],
           },
         ],
       }
     },
     options() {
-      const maxLikes = Math.max(this.shinsotsu, this.general)
+      const maxLikes = Math.max(this.naitei, this.shinsotsu, this.general)
       // maxGraphValue = 100(min), 200, ...
       const maxGraphValue = maxLikes + 100 - (maxLikes % 100)
       return {
@@ -79,6 +79,7 @@ export default {
       await this.$axios
         .get('https://vs-dena-advent.appspot.com/likes')
         .then((response) => {
+          this.naitei = response.data.naitei
           this.shinsotsu = response.data.shinsotsu
           this.general = response.data.general
         })
