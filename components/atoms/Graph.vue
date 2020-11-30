@@ -10,12 +10,12 @@ import BarChart from './BarChart.js'
 export default {
   name: 'Graph',
   components: {
-    BarChart
+    BarChart,
   },
   data: () => {
     return {
       shinsotsu: 0,
-      general: 0
+      general: 0,
     }
   },
   computed: {
@@ -27,9 +27,9 @@ export default {
           {
             label: '総合いいね数',
             data: [this.shinsotsu, this.general],
-            backgroundColor: ['#DC0451', '#FDC82F']
-          }
-        ]
+            backgroundColor: ['#DC0451', '#FDC82F'],
+          },
+        ],
       }
     },
     options() {
@@ -39,7 +39,7 @@ export default {
       return {
         responsive: true,
         legend: {
-          display: false
+          display: false,
         },
         scales: {
           yAxes: [
@@ -49,27 +49,27 @@ export default {
                 min: 0,
                 max: maxGraphValue,
                 stepSize: maxGraphValue / 10,
-                fontSize: 16
-              }
-            }
+                fontSize: 16,
+              },
+            },
           ],
           xAxes: [
             {
               display: true,
               ticks: {
-                fontSize: 16
-              }
-            }
-          ]
+                fontSize: 16,
+              },
+            },
+          ],
         },
         layout: {
           padding: {
             left: 10,
-            right: 10
-          }
-        }
+            right: 10,
+          },
+        },
       }
-    }
+    },
   },
   mounted() {
     this.getQiita()
@@ -82,8 +82,8 @@ export default {
           this.shinsotsu = response.data.shinsotsu
           this.general = response.data.general
         })
-    }
-  }
+    },
+  },
 }
 </script>
 

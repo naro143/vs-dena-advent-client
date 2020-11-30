@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'Twitter'
+  name: 'Twitter',
 }
 </script>
 

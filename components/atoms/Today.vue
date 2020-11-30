@@ -42,12 +42,12 @@ export default {
       general: null,
       shinsotsuCalendar: {
         title: 'DeNA 20 新卒 Advent Calendar 2019',
-        url: 'https://qiita.com/advent-calendar/2019/dena-20-shinsostu'
+        url: 'https://qiita.com/advent-calendar/2019/dena-20-shinsostu',
       },
       generalCalendar: {
         title: 'DeNA Advent Calendar 2019',
-        url: 'https://qiita.com/advent-calendar/2019/dena'
-      }
+        url: 'https://qiita.com/advent-calendar/2019/dena',
+      },
     }
   },
   mounted() {
@@ -62,8 +62,8 @@ export default {
           this.shinsotsu = response.data.shinsotsu[index]
           this.general = response.data.general[index]
         })
-    }
-  }
+    },
+  },
 }
 </script>
 
