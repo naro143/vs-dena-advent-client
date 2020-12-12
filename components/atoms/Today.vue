@@ -74,7 +74,7 @@ export default {
   methods: {
     async getQiita(index) {
       await this.$axios
-        .get('https://vs-dena-advent.appspot.com/articles')
+        .get('https://vs-dena-advent-298406.appspot.com/articles')
         .then((response) => {
           this.naitei = response.data.naitei[index]
           this.shinsotsu = response.data.shinsotsu[index]

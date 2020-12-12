@@ -22,7 +22,7 @@ export default {
     dataCollection() {
       return {
         display: false,
-        labels: ['21卒内定者', '20新卒', '社員オールスター'],
+        labels: ['21卒内定者', '20新卒', '社員'],
         datasets: [
           {
             label: '総合いいね数',
@@ -77,7 +77,7 @@ export default {
   methods: {
     async getQiita() {
       await this.$axios
-        .get('https://vs-dena-advent.appspot.com/likes')
+        .get('https://vs-dena-advent-298406.appspot.com/likes')
         .then((response) => {
           this.naitei = response.data.naitei
           this.shinsotsu = response.data.shinsotsu
