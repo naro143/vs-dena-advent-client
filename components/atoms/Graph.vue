@@ -27,7 +27,7 @@ export default {
           {
             label: '総合いいね数',
             data: [this.naitei, this.shinsotsu, this.general],
-            backgroundColor: ['#DC0451', 'FF7900', '#FDC82F'],
+            backgroundColor: ['#DC0451', '#FF7900', '#FDC82F'],
           },
         ],
       }
