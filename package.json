@@ -12,14 +12,14 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/axios": "^5.12.3",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/proxy": "^2.0.1",
-    "@nuxtjs/pwa": "^3.3.1",
+    "@nuxtjs/pwa": "^3.3.2",
     "chart.js": "^2.9.4",
     "moment": "^2.29.1",
     "node-sass": "^5.0.0",
-    "nuxt": "^2.14.7",
+    "nuxt": "^2.14.11",
     "ogp-parser": "^0.5.4",
     "sass-loader": "^10.1.0",
     "vue-chartjs": "^3.5.1"
