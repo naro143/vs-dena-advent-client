@@ -20,13 +20,13 @@ export default {
     Graph,
     Today,
     Twitter,
-    ScrollContainer
+    ScrollContainer,
   },
   head: {
     bodyAttrs: {
-      class: 'app'
-    }
-  }
+      class: 'app',
+    },
+  },
 }
 </script>
 

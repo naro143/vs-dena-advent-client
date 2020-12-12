@@ -66,7 +66,7 @@ export default {
   },
   proxy: {
     '/api': {
-      target: 'https://vs-dena-advent.appspot.com',
+      target: 'https://vs-dena-advent-298406.appspot.com',
       pathRewrite: { '^/api': '/' }
     },
     '/qiita': {

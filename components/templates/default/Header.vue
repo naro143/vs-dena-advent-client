@@ -1,14 +1,12 @@
 <template>
   <header class="Header">
-    <h1 class="Header__title">
-      vs DeNA Advent Calendar
-    </h1>
+    <h1 class="Header__title">vs DeNA Advent Calendar</h1>
   </header>
 </template>
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
 }
 </script>
 

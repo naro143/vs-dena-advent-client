@@ -10,7 +10,7 @@ import Footer from '@/components/templates/default/Footer'
 
 export default {
   name: 'ScrollContainer',
-  components: { Footer }
+  components: { Footer },
 }
 </script>
 

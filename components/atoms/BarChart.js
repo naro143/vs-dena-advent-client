@@ -12,6 +12,6 @@ export default {
   watch: {
     options() {
       this.renderChart(this.chartData, this.options)
-    }
-  }
+    },
+  },
 }
