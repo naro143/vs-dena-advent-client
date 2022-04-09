@@ -17,7 +17,7 @@
     "@nuxtjs/proxy": "^2.0.1",
     "@nuxtjs/pwa": "^3.3.2",
     "chart.js": "^2.9.4",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.11",
     "ogp-parser": "^0.5.4",
